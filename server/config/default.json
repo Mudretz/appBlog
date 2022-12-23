@@ -1,0 +1,6 @@
+{
+  "port": 8080,
+  "mongoUri": "",
+  "accessSecret": "super secret from backend",
+  "refreshSecret": "super refresh key"
+}
