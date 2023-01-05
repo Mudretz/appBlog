@@ -11,24 +11,41 @@ const BlogListPage = () => {
     return (
         <>
             { blogs.length > 0 ? (
-                <div className="container overflow-hidden text-center">
-                    <div className="row gy-5">
-                        {blogs.map((item) => (
-                        <div className="col-6" key={item._id}>
-                            <div className="p-3 border bg-light">
-                                <h2 className="text-start">{item.name}</h2>
-                                <p className="text-start">{item.written}</p>
-                                <p className="text-end">Автор статьи: {item.author}</p>
-                                <button
-                                    className="btn btn-primary btn-lg"
-                                    onClick={() => handleClick(item._id)}
-                                    type="button"
-                                >
-                                    Открыть
-                                </button>
+                <div className="container-fluid">
+                    <div className="container">
+                        <div className="row">
+                            <div className="row col-8">
+                                {blogs.map((item) => (
+                                <div className="col-12" key={item._id}>
+                                    <div className="p-4 border bg-white mb-4 text-start">
+                                        <div className="d-flex">
+                                            <img
+                                                src={item.image}
+                                                alt=""
+                                                height="35"
+                                                className="img-responsive border"
+                                            />
+                                            <div className="m-2">
+                                                <p className="h6">{item.author} <span className="text-muted time-at">Сегодня в {item.created_at.slice(11, 16)}</span></p>
+                                            </div>
+                                        </div>
+                                        <h3>{item.name}</h3>
+                                        <p>{item.written}</p>
+                                        <button
+                                            className="btn btn-outline-secondary"
+                                            onClick={() => handleClick(item._id)}
+                                            type="button"
+                                        >
+                                            Читать полностью...
+                                        </button>
+                                    </div>
+                                </div>
+                                ))}
+                            </div>
+                            <div className="container col-4 border bg-white">
+                                Дополнительный блог
                             </div>
                         </div>
-                        ))}
                     </div>
                 </div>
             ) : (

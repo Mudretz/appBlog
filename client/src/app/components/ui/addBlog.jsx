@@ -60,7 +60,8 @@ const AddBlog = () => {
             written: written,
             text: text,
             userId: currentUserId,
-            author: currentDataUser.name
+            author: currentDataUser.name,
+            image: currentDataUser.image
         };
         dispatch(createBlog(newData));
     };

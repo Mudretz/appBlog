@@ -12,7 +12,7 @@ const NavProfile = () => {
     if (!currentUser) return "loading";
     return (
         <div className="dropdown" onClick={toggleMenu}>
-            <div className="btn dropdown-toggle d-flex align-items-center">
+            <div className="btn dropdown-toggle d-flex align-items-center pe-0">
                 <div className="me-2">{currentUser.name}</div>
                 <img
                     src={currentUser.image}
